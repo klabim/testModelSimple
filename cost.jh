@@ -1,0 +1,319 @@
+
+ entity WaEmployee{ggi  String ,
+homeHostIndicator String ,
+legalGroupCompanyCode String ,
+prefix String ,
+latinBirthName String ,
+localBirthName String ,
+latinCommonName String ,
+localCommonName String ,
+latinNameComplement String ,
+localNameComplement String ,
+latinFirstName String ,
+localFirstName String ,
+employeeBirthDate Instant ,
+countryOfBirth String ,
+birthDepartment String ,
+localIdNumber String required,
+sensitiveEmployeeFlag String }
+ entity WaGender{localIdNumber  String ,
+employeeLocalGender String required,
+employeeGender String }
+ entity WaNationality{localIdNumber  String ,
+nationalityCountryCode String required,
+effectiveDate Instant required}
+ entity WaMaritalStatus{localIdNumber  String ,
+maritalStatusCode String required,
+maritalStatusLabel String ,
+effectiveDate Instant required}
+ entity WaPersonalAddress{localIdNumber  String ,
+personalAddressType String required,
+additionalAddress1 String ,
+additionalAddress2 String ,
+physicalAddress String ,
+additionalPostalDelivery String ,
+zipCodePostalCode String ,
+employeeCityOfResidence String ,
+countryOfResidence String ,
+effectiveDate Instant required}
+ entity WaAssignment{localIdNumber  String ,
+effectiveDate Instant required,
+sequence String required,
+localCompanyCode String ,
+legalGroupCompanyCode String ,
+establishment String ,
+poleActivityGroupCode String ,
+groupSubPoleActivityCode String ,
+groupSubPoleActivityTitle String ,
+budgetaryAffectationDepartmentCode String ,
+budgetaryAffectationDepartmentLabel String ,
+budgetFunctionalIdSakkarah String ,
+administrativeDepartmentLocalCode String ,
+administrativeDepartmentLocalLabel String ,
+adminFunctionalIdSakkarah String ,
+detachmentGroupCompany String ,
+detachmentLegalGroupCompany String }
+ entity WaHostCompany{localIdNumber  String ,
+effectiveDate Instant required,
+sequence String required,
+assignmentType String required,
+assignmentTypeLabel String ,
+hostCompanyCode String required,
+groupHostCompanyCode String }
+ entity WaHomeCompany{localIdNumber  String ,
+effectiveAssignmentDate Instant required,
+sequence String required,
+assignmentType String required,
+assignmentTypeLabel String ,
+HomeCompanyCode String required,
+groupHomeCompanyCode String }
+ entity WaJob{localIdNumber  String ,
+effectiveDate Instant required,
+sequence String required,
+localPositionCode String required,
+localPositionLevel String ,
+positionEntryDate Instant ,
+jobCodeLocalValue String ,
+jobCodeGroupeValue String ,
+jobEntryDate Instant ,
+localCollectiveAgreementCode String ,
+localCollectiveAgreementLabel String ,
+orgRelationship String ,
+prescripteur String }
+ entity WaClassification{localIdNumber  String ,
+effectiveDate Instant required,
+sequence String required,
+localClassificationCode String required,
+localClassificationLabel String ,
+groupClassificationCode String ,
+groupClassificationLabel String ,
+professionalCategoryCode String ,
+professionalCategoryLabel String }
+ entity WaManagementHris{managementHrisCode  String ,
+localIdNumber String required,
+managementHrisLabel String,
+entityManagementCode String}
+ entity ManagerialLink{managerialLinkType  String ,
+localIdNumber Stringrequired,
+localIDDirectManager Stringrequired,
+ggiDirectLineManager String,
+managerLastName String,
+managerFirstName String}
+ entity WaSeniority{localIdNumber  String ,
+groupSgDateOfEntry Instant required,
+sgSeniorityDate Instant required,
+hireDate Instant required,
+bankingSectorSeniority String,
+endingOfTrialPeriodEstimatedDate Instant }
+ entity WaLanguage{localIdNumber  String ,
+languageCode Stringrequired,
+languageLabel String,
+languageSpeakProficiencyCode String,
+languageSpeakProficiencyLabel String,
+languageReadProficiencyCode String,
+languageReadProficiencyLabel String,
+languageWriteProficiencyCode String,
+languageWriteProficiencyLabel String,
+nativeLanguage String,
+languageLevelLocalCode String,
+languageLevelLocalLabel String,
+languageLevelGroupCode String,
+languageLevelGroupLabel String}
+ entity FixedCompensation{localIdNumber  String ,
+fixedCompensationTypeGroupCode Stringrequired,
+fixedCompensationTypeGroupLabel String,
+effectiveBeginningDate Instant required,
+fixedCompensationCurrency String,
+fixedCompensationLocalTypeCode String,
+fixedCompensationLocalTypeLabel String,
+fixedCompensationAmount String,
+compensationFrequency String,
+effectiveEndDate Instant ,
+fixedCompensationEffectiveSequence String}
+ entity VariableCompensation{localIdNumber  String ,
+variableCompensationTypeGroupCode Stringrequired,
+variableCompensationTypeGroupLabel String,
+effectiveBeginningDate Instant required,
+variableCompensationCurrency String,
+variableCompensationLocalTypeCode String,
+variableCompensationLocalTypeLabel String,
+variableCompensationAmount String,
+effectiveEndDate Instant }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{employee} to WaEmployee}
+
+relationship OneToMany { WaEmployee{gender} to WaGender}
+
+
+relationship OneToMany { WaEmployee{nationality} to WaNationality}
+
+
+relationship OneToMany { WaEmployee{maritalStatus} to WaMaritalStatus}
+
+
+
+relationship OneToMany { WaEmployee{personalAddress} to WaPersonalAddress}
+
+
+
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{assignment} to WaAssignment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{hostCompany} to WaHostCompany}
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{homeCompany} to WaHomeCompany}
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{job} to WaJob}
+
+
+
+
+
+
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{classification} to WaClassification}
+
+
+
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{managementHris} to WaManagementHris}
+
+
+
+relationship OneToMany { WaEmployee{managerialLink} to ManagerialLink}
+
+
+
+
+relationship OneToMany { WaEmployee{seniority} to WaSeniority}
+
+
+
+
+
+relationship OneToMany { WaEmployee{language} to WaLanguage}
+
+
+
+
+
+
+
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{fixedCompensation} to FixedCompensation}
+
+
+
+
+
+
+
+
+
+
+relationship OneToMany { WaEmployee{variableCompensation} to VariableCompensation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
