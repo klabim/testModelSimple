@@ -1,0 +1,39 @@
+{
+  "testModelSimpleApp": {
+    "waAssignment": {
+      "home": {
+        "title": "Wa Assignments",
+        "createLabel": "Create a new Wa Assignment",
+        "createOrEditLabel": "Create or edit a Wa Assignment",
+        "notFound": "No Wa Assignments found"
+      },
+      "created": "A new Wa Assignment is created with identifier {{ param }}",
+      "updated": "A Wa Assignment is updated with identifier {{ param }}",
+      "deleted": "A Wa Assignment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Assignment {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Assignment"
+      },
+      "localIdNumber": "Local Id Number",
+      "effectiveDate": "Effective Date",
+      "sequence": "Sequence",
+      "localCompanyCode": "Local Company Code",
+      "legalGroupCompanyCode": "Legal Group Company Code",
+      "establishment": "Establishment",
+      "poleActivityGroupCode": "Pole Activity Group Code",
+      "groupSubPoleActivityCode": "Group Sub Pole Activity Code",
+      "groupSubPoleActivityTitle": "Group Sub Pole Activity Title",
+      "budgetaryAffectationDepartmentCode": "Budgetary Affectation Department Code",
+      "budgetaryAffectationDepartmentLabel": "Budgetary Affectation Department Label",
+      "budgetFunctionalIdSakkarah": "Budget Functional Id Sakkarah",
+      "administrativeDepartmentLocalCode": "Administrative Department Local Code",
+      "administrativeDepartmentLocalLabel": "Administrative Department Local Label",
+      "adminFunctionalIdSakkarah": "Admin Functional Id Sakkarah",
+      "detachmentGroupCompany": "Detachment Group Company",
+      "detachmentLegalGroupCompany": "Detachment Legal Group Company",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

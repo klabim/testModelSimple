@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="managerialLink">
+            <h2><span jhiTranslate="testModelSimpleApp.managerialLink.detail.title">Managerial Link</span> {{ managerialLink.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.managerialLink.managerialLinkType">Managerial Link Type</span></dt>
+                <dd>
+                    <span>{{ managerialLink.managerialLinkType }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.managerialLink.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ managerialLink.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.managerialLink.localIDDirectManager">Local ID Direct Manager</span></dt>
+                <dd>
+                    <span>{{ managerialLink.localIDDirectManager }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.managerialLink.ggiDirectLineManager">Ggi Direct Line Manager</span></dt>
+                <dd>
+                    <span>{{ managerialLink.ggiDirectLineManager }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.managerialLink.managerLastName">Manager Last Name</span></dt>
+                <dd>
+                    <span>{{ managerialLink.managerLastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.managerialLink.managerFirstName">Manager First Name</span></dt>
+                <dd>
+                    <span>{{ managerialLink.managerFirstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.managerialLink.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="managerialLink.waEmployee">
+                        <a [routerLink]="['/wa-employee', managerialLink.waEmployee?.id, 'view']">{{ managerialLink.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/managerial-link', managerialLink.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

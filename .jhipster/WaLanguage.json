@@ -1,0 +1,84 @@
+{
+    "name": "WaLanguage",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "languageLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageSpeakProficiencyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageSpeakProficiencyLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageReadProficiencyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageReadProficiencyLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageWriteProficiencyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageWriteProficiencyLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nativeLanguage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageLevelLocalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageLevelLocalLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageLevelGroupCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "languageLevelGroupLabel",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "language",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331101700",
+    "entityTableName": "wa_language",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

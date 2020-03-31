@@ -1,0 +1,86 @@
+{
+    "name": "WaJob",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sequence",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "localPositionCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "localPositionLevel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "positionEntryDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "jobCodeLocalValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jobCodeGroupeValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jobEntryDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "localCollectiveAgreementCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localCollectiveAgreementLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orgRelationship",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prescripteur",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "job",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331101200",
+    "entityTableName": "wa_job",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

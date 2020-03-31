@@ -1,0 +1,25 @@
+{
+  "testModelSimpleApp": {
+    "waNationality": {
+      "home": {
+        "title": "Wa Nationalities",
+        "createLabel": "Create a new Wa Nationality",
+        "createOrEditLabel": "Create or edit a Wa Nationality",
+        "notFound": "No Wa Nationalities found"
+      },
+      "created": "A new Wa Nationality is created with identifier {{ param }}",
+      "updated": "A Wa Nationality is updated with identifier {{ param }}",
+      "deleted": "A Wa Nationality is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Nationality {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Nationality"
+      },
+      "localIdNumber": "Local Id Number",
+      "nationalityCountryCode": "Nationality Country Code",
+      "effectiveDate": "Effective Date",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

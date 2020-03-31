@@ -1,0 +1,118 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fixed-compensation-heading" jhiTranslate="testModelSimpleApp.fixedCompensation.home.createOrEditLabel">Create or edit a Fixed Compensation</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationTypeGroupCode" for="field_fixedCompensationTypeGroupCode">Fixed Compensation Type Group Code</label>
+                    <input type="text" class="form-control" name="fixedCompensationTypeGroupCode" id="field_fixedCompensationTypeGroupCode"
+                           formControlName="fixedCompensationTypeGroupCode"/>
+                    <div *ngIf="editForm.get('fixedCompensationTypeGroupCode')!.invalid && (editForm.get('fixedCompensationTypeGroupCode')!.dirty || editForm.get('fixedCompensationTypeGroupCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fixedCompensationTypeGroupCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationTypeGroupLabel" for="field_fixedCompensationTypeGroupLabel">Fixed Compensation Type Group Label</label>
+                    <input type="text" class="form-control" name="fixedCompensationTypeGroupLabel" id="field_fixedCompensationTypeGroupLabel"
+                           formControlName="fixedCompensationTypeGroupLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.effectiveBeginningDate" for="field_effectiveBeginningDate">Effective Beginning Date</label>
+                    <div class="d-flex">
+                        <input id="field_effectiveBeginningDate" type="datetime-local" class="form-control" name="effectiveBeginningDate" formControlName="effectiveBeginningDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('effectiveBeginningDate')!.invalid && (editForm.get('effectiveBeginningDate')!.dirty || editForm.get('effectiveBeginningDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('effectiveBeginningDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('effectiveBeginningDate')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationCurrency" for="field_fixedCompensationCurrency">Fixed Compensation Currency</label>
+                    <input type="text" class="form-control" name="fixedCompensationCurrency" id="field_fixedCompensationCurrency"
+                           formControlName="fixedCompensationCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationLocalTypeCode" for="field_fixedCompensationLocalTypeCode">Fixed Compensation Local Type Code</label>
+                    <input type="text" class="form-control" name="fixedCompensationLocalTypeCode" id="field_fixedCompensationLocalTypeCode"
+                           formControlName="fixedCompensationLocalTypeCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationLocalTypeLabel" for="field_fixedCompensationLocalTypeLabel">Fixed Compensation Local Type Label</label>
+                    <input type="text" class="form-control" name="fixedCompensationLocalTypeLabel" id="field_fixedCompensationLocalTypeLabel"
+                           formControlName="fixedCompensationLocalTypeLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationAmount" for="field_fixedCompensationAmount">Fixed Compensation Amount</label>
+                    <input type="text" class="form-control" name="fixedCompensationAmount" id="field_fixedCompensationAmount"
+                           formControlName="fixedCompensationAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.compensationFrequency" for="field_compensationFrequency">Compensation Frequency</label>
+                    <input type="text" class="form-control" name="compensationFrequency" id="field_compensationFrequency"
+                           formControlName="compensationFrequency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.effectiveEndDate" for="field_effectiveEndDate">Effective End Date</label>
+                    <div class="d-flex">
+                        <input id="field_effectiveEndDate" type="datetime-local" class="form-control" name="effectiveEndDate" formControlName="effectiveEndDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationEffectiveSequence" for="field_fixedCompensationEffectiveSequence">Fixed Compensation Effective Sequence</label>
+                    <input type="text" class="form-control" name="fixedCompensationEffectiveSequence" id="field_fixedCompensationEffectiveSequence"
+                           formControlName="fixedCompensationEffectiveSequence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.fixedCompensation.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

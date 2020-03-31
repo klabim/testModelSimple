@@ -1,0 +1,25 @@
+{
+  "testModelSimpleApp": {
+    "waGender": {
+      "home": {
+        "title": "Wa Genders",
+        "createLabel": "Create a new Wa Gender",
+        "createOrEditLabel": "Create or edit a Wa Gender",
+        "notFound": "No Wa Genders found"
+      },
+      "created": "A new Wa Gender is created with identifier {{ param }}",
+      "updated": "A Wa Gender is updated with identifier {{ param }}",
+      "deleted": "A Wa Gender is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Gender {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Gender"
+      },
+      "localIdNumber": "Local Id Number",
+      "employeeLocalGender": "Employee Local Gender",
+      "employeeGender": "Employee Gender",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

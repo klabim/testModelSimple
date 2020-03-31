@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testModelSimpleApp.waMaritalStatus.home.title">Wa Marital Statuses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-wa-marital-status" [routerLink]="['/wa-marital-status/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="testModelSimpleApp.waMaritalStatus.home.createLabel">
+            Create a new Wa Marital Status
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="waMaritalStatuses?.length === 0">
+        <span jhiTranslate="testModelSimpleApp.waMaritalStatus.home.notFound">No waMaritalStatuses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="waMaritalStatuses?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waMaritalStatus.localIdNumber">Local Id Number</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waMaritalStatus.maritalStatusCode">Marital Status Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waMaritalStatus.maritalStatusLabel">Marital Status Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waMaritalStatus.effectiveDate">Effective Date</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waMaritalStatus.waEmployee">Wa Employee</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let waMaritalStatus of waMaritalStatuses ;trackBy: trackId">
+                    <td><a [routerLink]="['/wa-marital-status', waMaritalStatus.id, 'view']">{{ waMaritalStatus.id }}</a></td>
+                    <td>{{ waMaritalStatus.localIdNumber }}</td>
+                    <td>{{ waMaritalStatus.maritalStatusCode }}</td>
+                    <td>{{ waMaritalStatus.maritalStatusLabel }}</td>
+                    <td>{{ waMaritalStatus.effectiveDate | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="waMaritalStatus.waEmployee">
+                            <a [routerLink]="['/wa-employee', waMaritalStatus.waEmployee?.id, 'view']" >{{ waMaritalStatus.waEmployee?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/wa-marital-status', waMaritalStatus.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/wa-marital-status', waMaritalStatus.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(waMaritalStatus)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

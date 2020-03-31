@@ -1,0 +1,71 @@
+{
+    "name": "WaPersonalAddress",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "personalAddressType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "additionalAddress1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "additionalAddress2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "physicalAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "additionalPostalDelivery",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zipCodePostalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "employeeCityOfResidence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryOfResidence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "personalAddress",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331100800",
+    "entityTableName": "wa_personal_address",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

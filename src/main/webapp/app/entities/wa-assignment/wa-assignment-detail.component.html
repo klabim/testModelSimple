@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waAssignment">
+            <h2><span jhiTranslate="testModelSimpleApp.waAssignment.detail.title">Wa Assignment</span> {{ waAssignment.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waAssignment.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.effectiveDate">Effective Date</span></dt>
+                <dd>
+                    <span>{{ waAssignment.effectiveDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.sequence">Sequence</span></dt>
+                <dd>
+                    <span>{{ waAssignment.sequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.localCompanyCode">Local Company Code</span></dt>
+                <dd>
+                    <span>{{ waAssignment.localCompanyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.legalGroupCompanyCode">Legal Group Company Code</span></dt>
+                <dd>
+                    <span>{{ waAssignment.legalGroupCompanyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.establishment">Establishment</span></dt>
+                <dd>
+                    <span>{{ waAssignment.establishment }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.poleActivityGroupCode">Pole Activity Group Code</span></dt>
+                <dd>
+                    <span>{{ waAssignment.poleActivityGroupCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.groupSubPoleActivityCode">Group Sub Pole Activity Code</span></dt>
+                <dd>
+                    <span>{{ waAssignment.groupSubPoleActivityCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.groupSubPoleActivityTitle">Group Sub Pole Activity Title</span></dt>
+                <dd>
+                    <span>{{ waAssignment.groupSubPoleActivityTitle }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.budgetaryAffectationDepartmentCode">Budgetary Affectation Department Code</span></dt>
+                <dd>
+                    <span>{{ waAssignment.budgetaryAffectationDepartmentCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.budgetaryAffectationDepartmentLabel">Budgetary Affectation Department Label</span></dt>
+                <dd>
+                    <span>{{ waAssignment.budgetaryAffectationDepartmentLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.budgetFunctionalIdSakkarah">Budget Functional Id Sakkarah</span></dt>
+                <dd>
+                    <span>{{ waAssignment.budgetFunctionalIdSakkarah }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.administrativeDepartmentLocalCode">Administrative Department Local Code</span></dt>
+                <dd>
+                    <span>{{ waAssignment.administrativeDepartmentLocalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.administrativeDepartmentLocalLabel">Administrative Department Local Label</span></dt>
+                <dd>
+                    <span>{{ waAssignment.administrativeDepartmentLocalLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.adminFunctionalIdSakkarah">Admin Functional Id Sakkarah</span></dt>
+                <dd>
+                    <span>{{ waAssignment.adminFunctionalIdSakkarah }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.detachmentGroupCompany">Detachment Group Company</span></dt>
+                <dd>
+                    <span>{{ waAssignment.detachmentGroupCompany }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.detachmentLegalGroupCompany">Detachment Legal Group Company</span></dt>
+                <dd>
+                    <span>{{ waAssignment.detachmentLegalGroupCompany }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waAssignment.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waAssignment.waEmployee">
+                        <a [routerLink]="['/wa-employee', waAssignment.waEmployee?.id, 'view']">{{ waAssignment.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-assignment', waAssignment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

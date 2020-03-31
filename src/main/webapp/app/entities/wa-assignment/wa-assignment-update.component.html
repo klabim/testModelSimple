@@ -1,0 +1,153 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-wa-assignment-heading" jhiTranslate="testModelSimpleApp.waAssignment.home.createOrEditLabel">Create or edit a Wa Assignment</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.effectiveDate" for="field_effectiveDate">Effective Date</label>
+                    <div class="d-flex">
+                        <input id="field_effectiveDate" type="datetime-local" class="form-control" name="effectiveDate" formControlName="effectiveDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('effectiveDate')!.invalid && (editForm.get('effectiveDate')!.dirty || editForm.get('effectiveDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('effectiveDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('effectiveDate')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.sequence" for="field_sequence">Sequence</label>
+                    <input type="text" class="form-control" name="sequence" id="field_sequence"
+                           formControlName="sequence"/>
+                    <div *ngIf="editForm.get('sequence')!.invalid && (editForm.get('sequence')!.dirty || editForm.get('sequence')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('sequence')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.localCompanyCode" for="field_localCompanyCode">Local Company Code</label>
+                    <input type="text" class="form-control" name="localCompanyCode" id="field_localCompanyCode"
+                           formControlName="localCompanyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.legalGroupCompanyCode" for="field_legalGroupCompanyCode">Legal Group Company Code</label>
+                    <input type="text" class="form-control" name="legalGroupCompanyCode" id="field_legalGroupCompanyCode"
+                           formControlName="legalGroupCompanyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.establishment" for="field_establishment">Establishment</label>
+                    <input type="text" class="form-control" name="establishment" id="field_establishment"
+                           formControlName="establishment"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.poleActivityGroupCode" for="field_poleActivityGroupCode">Pole Activity Group Code</label>
+                    <input type="text" class="form-control" name="poleActivityGroupCode" id="field_poleActivityGroupCode"
+                           formControlName="poleActivityGroupCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.groupSubPoleActivityCode" for="field_groupSubPoleActivityCode">Group Sub Pole Activity Code</label>
+                    <input type="text" class="form-control" name="groupSubPoleActivityCode" id="field_groupSubPoleActivityCode"
+                           formControlName="groupSubPoleActivityCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.groupSubPoleActivityTitle" for="field_groupSubPoleActivityTitle">Group Sub Pole Activity Title</label>
+                    <input type="text" class="form-control" name="groupSubPoleActivityTitle" id="field_groupSubPoleActivityTitle"
+                           formControlName="groupSubPoleActivityTitle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.budgetaryAffectationDepartmentCode" for="field_budgetaryAffectationDepartmentCode">Budgetary Affectation Department Code</label>
+                    <input type="text" class="form-control" name="budgetaryAffectationDepartmentCode" id="field_budgetaryAffectationDepartmentCode"
+                           formControlName="budgetaryAffectationDepartmentCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.budgetaryAffectationDepartmentLabel" for="field_budgetaryAffectationDepartmentLabel">Budgetary Affectation Department Label</label>
+                    <input type="text" class="form-control" name="budgetaryAffectationDepartmentLabel" id="field_budgetaryAffectationDepartmentLabel"
+                           formControlName="budgetaryAffectationDepartmentLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.budgetFunctionalIdSakkarah" for="field_budgetFunctionalIdSakkarah">Budget Functional Id Sakkarah</label>
+                    <input type="text" class="form-control" name="budgetFunctionalIdSakkarah" id="field_budgetFunctionalIdSakkarah"
+                           formControlName="budgetFunctionalIdSakkarah"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.administrativeDepartmentLocalCode" for="field_administrativeDepartmentLocalCode">Administrative Department Local Code</label>
+                    <input type="text" class="form-control" name="administrativeDepartmentLocalCode" id="field_administrativeDepartmentLocalCode"
+                           formControlName="administrativeDepartmentLocalCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.administrativeDepartmentLocalLabel" for="field_administrativeDepartmentLocalLabel">Administrative Department Local Label</label>
+                    <input type="text" class="form-control" name="administrativeDepartmentLocalLabel" id="field_administrativeDepartmentLocalLabel"
+                           formControlName="administrativeDepartmentLocalLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.adminFunctionalIdSakkarah" for="field_adminFunctionalIdSakkarah">Admin Functional Id Sakkarah</label>
+                    <input type="text" class="form-control" name="adminFunctionalIdSakkarah" id="field_adminFunctionalIdSakkarah"
+                           formControlName="adminFunctionalIdSakkarah"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.detachmentGroupCompany" for="field_detachmentGroupCompany">Detachment Group Company</label>
+                    <input type="text" class="form-control" name="detachmentGroupCompany" id="field_detachmentGroupCompany"
+                           formControlName="detachmentGroupCompany"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.detachmentLegalGroupCompany" for="field_detachmentLegalGroupCompany">Detachment Legal Group Company</label>
+                    <input type="text" class="form-control" name="detachmentLegalGroupCompany" id="field_detachmentLegalGroupCompany"
+                           formControlName="detachmentLegalGroupCompany"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waAssignment.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

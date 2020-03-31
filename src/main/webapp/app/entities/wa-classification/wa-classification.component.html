@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testModelSimpleApp.waClassification.home.title">Wa Classifications</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-wa-classification" [routerLink]="['/wa-classification/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="testModelSimpleApp.waClassification.home.createLabel">
+            Create a new Wa Classification
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="waClassifications?.length === 0">
+        <span jhiTranslate="testModelSimpleApp.waClassification.home.notFound">No waClassifications found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="waClassifications?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.localIdNumber">Local Id Number</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.effectiveDate">Effective Date</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.sequence">Sequence</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.localClassificationCode">Local Classification Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.localClassificationLabel">Local Classification Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.groupClassificationCode">Group Classification Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.groupClassificationLabel">Group Classification Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.professionalCategoryCode">Professional Category Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.professionalCategoryLabel">Professional Category Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waClassification.waEmployee">Wa Employee</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let waClassification of waClassifications ;trackBy: trackId">
+                    <td><a [routerLink]="['/wa-classification', waClassification.id, 'view']">{{ waClassification.id }}</a></td>
+                    <td>{{ waClassification.localIdNumber }}</td>
+                    <td>{{ waClassification.effectiveDate | date:'medium' }}</td>
+                    <td>{{ waClassification.sequence }}</td>
+                    <td>{{ waClassification.localClassificationCode }}</td>
+                    <td>{{ waClassification.localClassificationLabel }}</td>
+                    <td>{{ waClassification.groupClassificationCode }}</td>
+                    <td>{{ waClassification.groupClassificationLabel }}</td>
+                    <td>{{ waClassification.professionalCategoryCode }}</td>
+                    <td>{{ waClassification.professionalCategoryLabel }}</td>
+                    <td>
+                        <div *ngIf="waClassification.waEmployee">
+                            <a [routerLink]="['/wa-employee', waClassification.waEmployee?.id, 'view']" >{{ waClassification.waEmployee?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/wa-classification', waClassification.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/wa-classification', waClassification.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(waClassification)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

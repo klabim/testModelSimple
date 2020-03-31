@@ -1,0 +1,124 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-wa-language-heading" jhiTranslate="testModelSimpleApp.waLanguage.home.createOrEditLabel">Create or edit a Wa Language</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageCode" for="field_languageCode">Language Code</label>
+                    <input type="text" class="form-control" name="languageCode" id="field_languageCode"
+                           formControlName="languageCode"/>
+                    <div *ngIf="editForm.get('languageCode')!.invalid && (editForm.get('languageCode')!.dirty || editForm.get('languageCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('languageCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageLabel" for="field_languageLabel">Language Label</label>
+                    <input type="text" class="form-control" name="languageLabel" id="field_languageLabel"
+                           formControlName="languageLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageSpeakProficiencyCode" for="field_languageSpeakProficiencyCode">Language Speak Proficiency Code</label>
+                    <input type="text" class="form-control" name="languageSpeakProficiencyCode" id="field_languageSpeakProficiencyCode"
+                           formControlName="languageSpeakProficiencyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageSpeakProficiencyLabel" for="field_languageSpeakProficiencyLabel">Language Speak Proficiency Label</label>
+                    <input type="text" class="form-control" name="languageSpeakProficiencyLabel" id="field_languageSpeakProficiencyLabel"
+                           formControlName="languageSpeakProficiencyLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageReadProficiencyCode" for="field_languageReadProficiencyCode">Language Read Proficiency Code</label>
+                    <input type="text" class="form-control" name="languageReadProficiencyCode" id="field_languageReadProficiencyCode"
+                           formControlName="languageReadProficiencyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageReadProficiencyLabel" for="field_languageReadProficiencyLabel">Language Read Proficiency Label</label>
+                    <input type="text" class="form-control" name="languageReadProficiencyLabel" id="field_languageReadProficiencyLabel"
+                           formControlName="languageReadProficiencyLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageWriteProficiencyCode" for="field_languageWriteProficiencyCode">Language Write Proficiency Code</label>
+                    <input type="text" class="form-control" name="languageWriteProficiencyCode" id="field_languageWriteProficiencyCode"
+                           formControlName="languageWriteProficiencyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageWriteProficiencyLabel" for="field_languageWriteProficiencyLabel">Language Write Proficiency Label</label>
+                    <input type="text" class="form-control" name="languageWriteProficiencyLabel" id="field_languageWriteProficiencyLabel"
+                           formControlName="languageWriteProficiencyLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.nativeLanguage" for="field_nativeLanguage">Native Language</label>
+                    <input type="text" class="form-control" name="nativeLanguage" id="field_nativeLanguage"
+                           formControlName="nativeLanguage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageLevelLocalCode" for="field_languageLevelLocalCode">Language Level Local Code</label>
+                    <input type="text" class="form-control" name="languageLevelLocalCode" id="field_languageLevelLocalCode"
+                           formControlName="languageLevelLocalCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageLevelLocalLabel" for="field_languageLevelLocalLabel">Language Level Local Label</label>
+                    <input type="text" class="form-control" name="languageLevelLocalLabel" id="field_languageLevelLocalLabel"
+                           formControlName="languageLevelLocalLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageLevelGroupCode" for="field_languageLevelGroupCode">Language Level Group Code</label>
+                    <input type="text" class="form-control" name="languageLevelGroupCode" id="field_languageLevelGroupCode"
+                           formControlName="languageLevelGroupCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.languageLevelGroupLabel" for="field_languageLevelGroupLabel">Language Level Group Label</label>
+                    <input type="text" class="form-control" name="languageLevelGroupLabel" id="field_languageLevelGroupLabel"
+                           formControlName="languageLevelGroupLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waLanguage.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+{
+    "name": "WaEmployee",
+    "fields": [
+        {
+            "fieldName": "ggi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "homeHostIndicator",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "legalGroupCompanyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prefix",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latinBirthName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localBirthName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latinCommonName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localCommonName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latinNameComplement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localNameComplement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latinFirstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localFirstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "employeeBirthDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "countryOfBirth",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthDepartment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sensitiveEmployeeFlag",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waGender",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "gender"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waNationality",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "nationality"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waMaritalStatus",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "maritalStatus"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waPersonalAddress",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "personalAddress"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waAssignment",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "assignment"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waHostCompany",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "hostCompany"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waHomeCompany",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "homeCompany"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waJob",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "job"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waClassification",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "classification"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waManagementHris",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "managementHris"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "managerialLink",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "managerialLink"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waSeniority",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "seniority"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "waLanguage",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "language"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "fixedCompensation",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "fixedCompensation"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "variableCompensation",
+            "otherEntityRelationshipName": "waEmployee",
+            "relationshipName": "variableCompensation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "employee",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331100400",
+    "entityTableName": "wa_employee",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

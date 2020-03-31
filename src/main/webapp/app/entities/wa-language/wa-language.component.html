@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testModelSimpleApp.waLanguage.home.title">Wa Languages</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-wa-language" [routerLink]="['/wa-language/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="testModelSimpleApp.waLanguage.home.createLabel">
+            Create a new Wa Language
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="waLanguages?.length === 0">
+        <span jhiTranslate="testModelSimpleApp.waLanguage.home.notFound">No waLanguages found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="waLanguages?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.localIdNumber">Local Id Number</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageCode">Language Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageLabel">Language Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageSpeakProficiencyCode">Language Speak Proficiency Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageSpeakProficiencyLabel">Language Speak Proficiency Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageReadProficiencyCode">Language Read Proficiency Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageReadProficiencyLabel">Language Read Proficiency Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageWriteProficiencyCode">Language Write Proficiency Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageWriteProficiencyLabel">Language Write Proficiency Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.nativeLanguage">Native Language</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelLocalCode">Language Level Local Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelLocalLabel">Language Level Local Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelGroupCode">Language Level Group Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelGroupLabel">Language Level Group Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waLanguage.waEmployee">Wa Employee</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let waLanguage of waLanguages ;trackBy: trackId">
+                    <td><a [routerLink]="['/wa-language', waLanguage.id, 'view']">{{ waLanguage.id }}</a></td>
+                    <td>{{ waLanguage.localIdNumber }}</td>
+                    <td>{{ waLanguage.languageCode }}</td>
+                    <td>{{ waLanguage.languageLabel }}</td>
+                    <td>{{ waLanguage.languageSpeakProficiencyCode }}</td>
+                    <td>{{ waLanguage.languageSpeakProficiencyLabel }}</td>
+                    <td>{{ waLanguage.languageReadProficiencyCode }}</td>
+                    <td>{{ waLanguage.languageReadProficiencyLabel }}</td>
+                    <td>{{ waLanguage.languageWriteProficiencyCode }}</td>
+                    <td>{{ waLanguage.languageWriteProficiencyLabel }}</td>
+                    <td>{{ waLanguage.nativeLanguage }}</td>
+                    <td>{{ waLanguage.languageLevelLocalCode }}</td>
+                    <td>{{ waLanguage.languageLevelLocalLabel }}</td>
+                    <td>{{ waLanguage.languageLevelGroupCode }}</td>
+                    <td>{{ waLanguage.languageLevelGroupLabel }}</td>
+                    <td>
+                        <div *ngIf="waLanguage.waEmployee">
+                            <a [routerLink]="['/wa-employee', waLanguage.waEmployee?.id, 'view']" >{{ waLanguage.waEmployee?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/wa-language', waLanguage.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/wa-language', waLanguage.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(waLanguage)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+{
+    "name": "VariableCompensation",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "variableCompensationTypeGroupCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "variableCompensationTypeGroupLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveBeginningDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "variableCompensationCurrency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "variableCompensationLocalTypeCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "variableCompensationLocalTypeLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "variableCompensationAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveEndDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "variableCompensation",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331101900",
+    "entityTableName": "variable_compensation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

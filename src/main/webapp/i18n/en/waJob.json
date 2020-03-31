@@ -1,0 +1,35 @@
+{
+  "testModelSimpleApp": {
+    "waJob": {
+      "home": {
+        "title": "Wa Jobs",
+        "createLabel": "Create a new Wa Job",
+        "createOrEditLabel": "Create or edit a Wa Job",
+        "notFound": "No Wa Jobs found"
+      },
+      "created": "A new Wa Job is created with identifier {{ param }}",
+      "updated": "A Wa Job is updated with identifier {{ param }}",
+      "deleted": "A Wa Job is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Job {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Job"
+      },
+      "localIdNumber": "Local Id Number",
+      "effectiveDate": "Effective Date",
+      "sequence": "Sequence",
+      "localPositionCode": "Local Position Code",
+      "localPositionLevel": "Local Position Level",
+      "positionEntryDate": "Position Entry Date",
+      "jobCodeLocalValue": "Job Code Local Value",
+      "jobCodeGroupeValue": "Job Code Groupe Value",
+      "jobEntryDate": "Job Entry Date",
+      "localCollectiveAgreementCode": "Local Collective Agreement Code",
+      "localCollectiveAgreementLabel": "Local Collective Agreement Label",
+      "orgRelationship": "Org Relationship",
+      "prescripteur": "Prescripteur",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

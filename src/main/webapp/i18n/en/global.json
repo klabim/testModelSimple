@@ -7,6 +7,22 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "waEmployee": "Wa Employee",
+        "waGender": "Wa Gender",
+        "waNationality": "Wa Nationality",
+        "waMaritalStatus": "Wa Marital Status",
+        "waPersonalAddress": "Wa Personal Address",
+        "waAssignment": "Wa Assignment",
+        "waHostCompany": "Wa Host Company",
+        "waHomeCompany": "Wa Home Company",
+        "waJob": "Wa Job",
+        "waClassification": "Wa Classification",
+        "waManagementHris": "Wa Management Hris",
+        "managerialLink": "Managerial Link",
+        "waSeniority": "Wa Seniority",
+        "waLanguage": "Wa Language",
+        "fixedCompensation": "Fixed Compensation",
+        "variableCompensation": "Variable Compensation",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,31 @@
+{
+  "testModelSimpleApp": {
+    "waClassification": {
+      "home": {
+        "title": "Wa Classifications",
+        "createLabel": "Create a new Wa Classification",
+        "createOrEditLabel": "Create or edit a Wa Classification",
+        "notFound": "No Wa Classifications found"
+      },
+      "created": "A new Wa Classification is created with identifier {{ param }}",
+      "updated": "A Wa Classification is updated with identifier {{ param }}",
+      "deleted": "A Wa Classification is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Classification {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Classification"
+      },
+      "localIdNumber": "Local Id Number",
+      "effectiveDate": "Effective Date",
+      "sequence": "Sequence",
+      "localClassificationCode": "Local Classification Code",
+      "localClassificationLabel": "Local Classification Label",
+      "groupClassificationCode": "Group Classification Code",
+      "groupClassificationLabel": "Group Classification Label",
+      "professionalCategoryCode": "Professional Category Code",
+      "professionalCategoryLabel": "Professional Category Label",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

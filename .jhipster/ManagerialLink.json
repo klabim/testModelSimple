@@ -1,0 +1,55 @@
+{
+    "name": "ManagerialLink",
+    "fields": [
+        {
+            "fieldName": "managerialLinkType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "localIDDirectManager",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ggiDirectLineManager",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerLastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerFirstName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "managerialLink",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331101500",
+    "entityTableName": "managerial_link",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

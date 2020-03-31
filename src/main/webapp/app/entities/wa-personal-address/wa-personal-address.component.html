@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testModelSimpleApp.waPersonalAddress.home.title">Wa Personal Addresses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-wa-personal-address" [routerLink]="['/wa-personal-address/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="testModelSimpleApp.waPersonalAddress.home.createLabel">
+            Create a new Wa Personal Address
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="waPersonalAddresses?.length === 0">
+        <span jhiTranslate="testModelSimpleApp.waPersonalAddress.home.notFound">No waPersonalAddresses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="waPersonalAddresses?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.localIdNumber">Local Id Number</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.personalAddressType">Personal Address Type</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.additionalAddress1">Additional Address 1</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.additionalAddress2">Additional Address 2</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.physicalAddress">Physical Address</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.additionalPostalDelivery">Additional Postal Delivery</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.zipCodePostalCode">Zip Code Postal Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.employeeCityOfResidence">Employee City Of Residence</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.countryOfResidence">Country Of Residence</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.effectiveDate">Effective Date</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waPersonalAddress.waEmployee">Wa Employee</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let waPersonalAddress of waPersonalAddresses ;trackBy: trackId">
+                    <td><a [routerLink]="['/wa-personal-address', waPersonalAddress.id, 'view']">{{ waPersonalAddress.id }}</a></td>
+                    <td>{{ waPersonalAddress.localIdNumber }}</td>
+                    <td>{{ waPersonalAddress.personalAddressType }}</td>
+                    <td>{{ waPersonalAddress.additionalAddress1 }}</td>
+                    <td>{{ waPersonalAddress.additionalAddress2 }}</td>
+                    <td>{{ waPersonalAddress.physicalAddress }}</td>
+                    <td>{{ waPersonalAddress.additionalPostalDelivery }}</td>
+                    <td>{{ waPersonalAddress.zipCodePostalCode }}</td>
+                    <td>{{ waPersonalAddress.employeeCityOfResidence }}</td>
+                    <td>{{ waPersonalAddress.countryOfResidence }}</td>
+                    <td>{{ waPersonalAddress.effectiveDate | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="waPersonalAddress.waEmployee">
+                            <a [routerLink]="['/wa-employee', waPersonalAddress.waEmployee?.id, 'view']" >{{ waPersonalAddress.waEmployee?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/wa-personal-address', waPersonalAddress.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/wa-personal-address', waPersonalAddress.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(waPersonalAddress)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

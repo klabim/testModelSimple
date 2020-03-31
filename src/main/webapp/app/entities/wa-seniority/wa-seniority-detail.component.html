@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waSeniority">
+            <h2><span jhiTranslate="testModelSimpleApp.waSeniority.detail.title">Wa Seniority</span> {{ waSeniority.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waSeniority.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waSeniority.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waSeniority.groupSgDateOfEntry">Group Sg Date Of Entry</span></dt>
+                <dd>
+                    <span>{{ waSeniority.groupSgDateOfEntry }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waSeniority.sgSeniorityDate">Sg Seniority Date</span></dt>
+                <dd>
+                    <span>{{ waSeniority.sgSeniorityDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waSeniority.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{ waSeniority.hireDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waSeniority.bankingSectorSeniority">Banking Sector Seniority</span></dt>
+                <dd>
+                    <span>{{ waSeniority.bankingSectorSeniority }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waSeniority.endingOfTrialPeriodEstimatedDate">Ending Of Trial Period Estimated Date</span></dt>
+                <dd>
+                    <span>{{ waSeniority.endingOfTrialPeriodEstimatedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waSeniority.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waSeniority.waEmployee">
+                        <a [routerLink]="['/wa-employee', waSeniority.waEmployee?.id, 'view']">{{ waSeniority.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-seniority', waSeniority.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

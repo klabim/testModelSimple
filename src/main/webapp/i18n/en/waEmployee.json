@@ -1,0 +1,55 @@
+{
+  "testModelSimpleApp": {
+    "waEmployee": {
+      "home": {
+        "title": "Wa Employees",
+        "createLabel": "Create a new Wa Employee",
+        "createOrEditLabel": "Create or edit a Wa Employee",
+        "notFound": "No Wa Employees found"
+      },
+      "created": "A new Wa Employee is created with identifier {{ param }}",
+      "updated": "A Wa Employee is updated with identifier {{ param }}",
+      "deleted": "A Wa Employee is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Employee {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Employee"
+      },
+      "ggi": "Ggi",
+      "homeHostIndicator": "Home Host Indicator",
+      "legalGroupCompanyCode": "Legal Group Company Code",
+      "prefix": "Prefix",
+      "latinBirthName": "Latin Birth Name",
+      "localBirthName": "Local Birth Name",
+      "latinCommonName": "Latin Common Name",
+      "localCommonName": "Local Common Name",
+      "latinNameComplement": "Latin Name Complement",
+      "localNameComplement": "Local Name Complement",
+      "latinFirstName": "Latin First Name",
+      "localFirstName": "Local First Name",
+      "employeeBirthDate": "Employee Birth Date",
+      "countryOfBirth": "Country Of Birth",
+      "birthDepartment": "Birth Department",
+      "localIdNumber": "Local Id Number",
+      "sensitiveEmployeeFlag": "Sensitive Employee Flag",
+      "employee": "Employee",
+      "gender": "Gender",
+      "nationality": "Nationality",
+      "maritalStatus": "Marital Status",
+      "personalAddress": "Personal Address",
+      "assignment": "Assignment",
+      "hostCompany": "Host Company",
+      "homeCompany": "Home Company",
+      "job": "Job",
+      "classification": "Classification",
+      "managementHris": "Management Hris",
+      "managerialLink": "Managerial Link",
+      "seniority": "Seniority",
+      "language": "Language",
+      "fixedCompensation": "Fixed Compensation",
+      "variableCompensation": "Variable Compensation",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

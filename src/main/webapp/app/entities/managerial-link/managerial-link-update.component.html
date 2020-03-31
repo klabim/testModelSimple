@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-managerial-link-heading" jhiTranslate="testModelSimpleApp.managerialLink.home.createOrEditLabel">Create or edit a Managerial Link</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.managerialLink.managerialLinkType" for="field_managerialLinkType">Managerial Link Type</label>
+                    <input type="text" class="form-control" name="managerialLinkType" id="field_managerialLinkType"
+                           formControlName="managerialLinkType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.managerialLink.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                    <div *ngIf="editForm.get('localIdNumber')!.invalid && (editForm.get('localIdNumber')!.dirty || editForm.get('localIdNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('localIdNumber')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.managerialLink.localIDDirectManager" for="field_localIDDirectManager">Local ID Direct Manager</label>
+                    <input type="text" class="form-control" name="localIDDirectManager" id="field_localIDDirectManager"
+                           formControlName="localIDDirectManager"/>
+                    <div *ngIf="editForm.get('localIDDirectManager')!.invalid && (editForm.get('localIDDirectManager')!.dirty || editForm.get('localIDDirectManager')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('localIDDirectManager')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.managerialLink.ggiDirectLineManager" for="field_ggiDirectLineManager">Ggi Direct Line Manager</label>
+                    <input type="text" class="form-control" name="ggiDirectLineManager" id="field_ggiDirectLineManager"
+                           formControlName="ggiDirectLineManager"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.managerialLink.managerLastName" for="field_managerLastName">Manager Last Name</label>
+                    <input type="text" class="form-control" name="managerLastName" id="field_managerLastName"
+                           formControlName="managerLastName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.managerialLink.managerFirstName" for="field_managerFirstName">Manager First Name</label>
+                    <input type="text" class="form-control" name="managerFirstName" id="field_managerFirstName"
+                           formControlName="managerFirstName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.managerialLink.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waHostCompany">
+            <h2><span jhiTranslate="testModelSimpleApp.waHostCompany.detail.title">Wa Host Company</span> {{ waHostCompany.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waHostCompany.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.effectiveDate">Effective Date</span></dt>
+                <dd>
+                    <span>{{ waHostCompany.effectiveDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.sequence">Sequence</span></dt>
+                <dd>
+                    <span>{{ waHostCompany.sequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.assignmentType">Assignment Type</span></dt>
+                <dd>
+                    <span>{{ waHostCompany.assignmentType }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.assignmentTypeLabel">Assignment Type Label</span></dt>
+                <dd>
+                    <span>{{ waHostCompany.assignmentTypeLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.hostCompanyCode">Host Company Code</span></dt>
+                <dd>
+                    <span>{{ waHostCompany.hostCompanyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.groupHostCompanyCode">Group Host Company Code</span></dt>
+                <dd>
+                    <span>{{ waHostCompany.groupHostCompanyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHostCompany.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waHostCompany.waEmployee">
+                        <a [routerLink]="['/wa-employee', waHostCompany.waEmployee?.id, 'view']">{{ waHostCompany.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-host-company', waHostCompany.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
