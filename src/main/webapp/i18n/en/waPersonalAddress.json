@@ -1,0 +1,32 @@
+{
+  "testModelSimpleApp": {
+    "waPersonalAddress": {
+      "home": {
+        "title": "Wa Personal Addresses",
+        "createLabel": "Create a new Wa Personal Address",
+        "createOrEditLabel": "Create or edit a Wa Personal Address",
+        "notFound": "No Wa Personal Addresses found"
+      },
+      "created": "A new Wa Personal Address is created with identifier {{ param }}",
+      "updated": "A Wa Personal Address is updated with identifier {{ param }}",
+      "deleted": "A Wa Personal Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Personal Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Personal Address"
+      },
+      "localIdNumber": "Local Id Number",
+      "personalAddressType": "Personal Address Type",
+      "additionalAddress1": "Additional Address 1",
+      "additionalAddress2": "Additional Address 2",
+      "physicalAddress": "Physical Address",
+      "additionalPostalDelivery": "Additional Postal Delivery",
+      "zipCodePostalCode": "Zip Code Postal Code",
+      "employeeCityOfResidence": "Employee City Of Residence",
+      "countryOfResidence": "Country Of Residence",
+      "effectiveDate": "Effective Date",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

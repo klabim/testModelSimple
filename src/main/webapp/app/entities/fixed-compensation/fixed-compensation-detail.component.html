@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fixedCompensation">
+            <h2><span jhiTranslate="testModelSimpleApp.fixedCompensation.detail.title">Fixed Compensation</span> {{ fixedCompensation.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationTypeGroupCode">Fixed Compensation Type Group Code</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.fixedCompensationTypeGroupCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationTypeGroupLabel">Fixed Compensation Type Group Label</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.fixedCompensationTypeGroupLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.effectiveBeginningDate">Effective Beginning Date</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.effectiveBeginningDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationCurrency">Fixed Compensation Currency</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.fixedCompensationCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationLocalTypeCode">Fixed Compensation Local Type Code</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.fixedCompensationLocalTypeCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationLocalTypeLabel">Fixed Compensation Local Type Label</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.fixedCompensationLocalTypeLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationAmount">Fixed Compensation Amount</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.fixedCompensationAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.compensationFrequency">Compensation Frequency</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.compensationFrequency }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.effectiveEndDate">Effective End Date</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.effectiveEndDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.fixedCompensationEffectiveSequence">Fixed Compensation Effective Sequence</span></dt>
+                <dd>
+                    <span>{{ fixedCompensation.fixedCompensationEffectiveSequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.fixedCompensation.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="fixedCompensation.waEmployee">
+                        <a [routerLink]="['/wa-employee', fixedCompensation.waEmployee?.id, 'view']">{{ fixedCompensation.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fixed-compensation', fixedCompensation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

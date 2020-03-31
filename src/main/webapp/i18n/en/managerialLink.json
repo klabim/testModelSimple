@@ -1,0 +1,28 @@
+{
+  "testModelSimpleApp": {
+    "managerialLink": {
+      "home": {
+        "title": "Managerial Links",
+        "createLabel": "Create a new Managerial Link",
+        "createOrEditLabel": "Create or edit a Managerial Link",
+        "notFound": "No Managerial Links found"
+      },
+      "created": "A new Managerial Link is created with identifier {{ param }}",
+      "updated": "A Managerial Link is updated with identifier {{ param }}",
+      "deleted": "A Managerial Link is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Managerial Link {{ id }}?"
+      },
+      "detail": {
+        "title": "Managerial Link"
+      },
+      "managerialLinkType": "Managerial Link Type",
+      "localIdNumber": "Local Id Number",
+      "localIDDirectManager": "Local ID Direct Manager",
+      "ggiDirectLineManager": "Ggi Direct Line Manager",
+      "managerLastName": "Manager Last Name",
+      "managerFirstName": "Manager First Name",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

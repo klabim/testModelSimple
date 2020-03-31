@@ -1,0 +1,40 @@
+{
+    "name": "WaGender",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "employeeLocalGender",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "employeeGender",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "gender",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331100500",
+    "entityTableName": "wa_gender",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

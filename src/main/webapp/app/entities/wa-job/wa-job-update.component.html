@@ -1,0 +1,137 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-wa-job-heading" jhiTranslate="testModelSimpleApp.waJob.home.createOrEditLabel">Create or edit a Wa Job</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.effectiveDate" for="field_effectiveDate">Effective Date</label>
+                    <div class="d-flex">
+                        <input id="field_effectiveDate" type="datetime-local" class="form-control" name="effectiveDate" formControlName="effectiveDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('effectiveDate')!.invalid && (editForm.get('effectiveDate')!.dirty || editForm.get('effectiveDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('effectiveDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('effectiveDate')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.sequence" for="field_sequence">Sequence</label>
+                    <input type="text" class="form-control" name="sequence" id="field_sequence"
+                           formControlName="sequence"/>
+                    <div *ngIf="editForm.get('sequence')!.invalid && (editForm.get('sequence')!.dirty || editForm.get('sequence')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('sequence')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.localPositionCode" for="field_localPositionCode">Local Position Code</label>
+                    <input type="text" class="form-control" name="localPositionCode" id="field_localPositionCode"
+                           formControlName="localPositionCode"/>
+                    <div *ngIf="editForm.get('localPositionCode')!.invalid && (editForm.get('localPositionCode')!.dirty || editForm.get('localPositionCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('localPositionCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.localPositionLevel" for="field_localPositionLevel">Local Position Level</label>
+                    <input type="text" class="form-control" name="localPositionLevel" id="field_localPositionLevel"
+                           formControlName="localPositionLevel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.positionEntryDate" for="field_positionEntryDate">Position Entry Date</label>
+                    <div class="d-flex">
+                        <input id="field_positionEntryDate" type="datetime-local" class="form-control" name="positionEntryDate" formControlName="positionEntryDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.jobCodeLocalValue" for="field_jobCodeLocalValue">Job Code Local Value</label>
+                    <input type="text" class="form-control" name="jobCodeLocalValue" id="field_jobCodeLocalValue"
+                           formControlName="jobCodeLocalValue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.jobCodeGroupeValue" for="field_jobCodeGroupeValue">Job Code Groupe Value</label>
+                    <input type="text" class="form-control" name="jobCodeGroupeValue" id="field_jobCodeGroupeValue"
+                           formControlName="jobCodeGroupeValue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.jobEntryDate" for="field_jobEntryDate">Job Entry Date</label>
+                    <div class="d-flex">
+                        <input id="field_jobEntryDate" type="datetime-local" class="form-control" name="jobEntryDate" formControlName="jobEntryDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.localCollectiveAgreementCode" for="field_localCollectiveAgreementCode">Local Collective Agreement Code</label>
+                    <input type="text" class="form-control" name="localCollectiveAgreementCode" id="field_localCollectiveAgreementCode"
+                           formControlName="localCollectiveAgreementCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.localCollectiveAgreementLabel" for="field_localCollectiveAgreementLabel">Local Collective Agreement Label</label>
+                    <input type="text" class="form-control" name="localCollectiveAgreementLabel" id="field_localCollectiveAgreementLabel"
+                           formControlName="localCollectiveAgreementLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.orgRelationship" for="field_orgRelationship">Org Relationship</label>
+                    <input type="text" class="form-control" name="orgRelationship" id="field_orgRelationship"
+                           formControlName="orgRelationship"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.prescripteur" for="field_prescripteur">Prescripteur</label>
+                    <input type="text" class="form-control" name="prescripteur" id="field_prescripteur"
+                           formControlName="prescripteur"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waJob.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

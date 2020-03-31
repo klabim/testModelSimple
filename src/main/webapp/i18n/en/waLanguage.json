@@ -1,0 +1,36 @@
+{
+  "testModelSimpleApp": {
+    "waLanguage": {
+      "home": {
+        "title": "Wa Languages",
+        "createLabel": "Create a new Wa Language",
+        "createOrEditLabel": "Create or edit a Wa Language",
+        "notFound": "No Wa Languages found"
+      },
+      "created": "A new Wa Language is created with identifier {{ param }}",
+      "updated": "A Wa Language is updated with identifier {{ param }}",
+      "deleted": "A Wa Language is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Language {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Language"
+      },
+      "localIdNumber": "Local Id Number",
+      "languageCode": "Language Code",
+      "languageLabel": "Language Label",
+      "languageSpeakProficiencyCode": "Language Speak Proficiency Code",
+      "languageSpeakProficiencyLabel": "Language Speak Proficiency Label",
+      "languageReadProficiencyCode": "Language Read Proficiency Code",
+      "languageReadProficiencyLabel": "Language Read Proficiency Label",
+      "languageWriteProficiencyCode": "Language Write Proficiency Code",
+      "languageWriteProficiencyLabel": "Language Write Proficiency Label",
+      "nativeLanguage": "Native Language",
+      "languageLevelLocalCode": "Language Level Local Code",
+      "languageLevelLocalLabel": "Language Level Local Label",
+      "languageLevelGroupCode": "Language Level Group Code",
+      "languageLevelGroupLabel": "Language Level Group Label",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

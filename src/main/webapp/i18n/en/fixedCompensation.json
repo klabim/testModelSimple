@@ -1,0 +1,33 @@
+{
+  "testModelSimpleApp": {
+    "fixedCompensation": {
+      "home": {
+        "title": "Fixed Compensations",
+        "createLabel": "Create a new Fixed Compensation",
+        "createOrEditLabel": "Create or edit a Fixed Compensation",
+        "notFound": "No Fixed Compensations found"
+      },
+      "created": "A new Fixed Compensation is created with identifier {{ param }}",
+      "updated": "A Fixed Compensation is updated with identifier {{ param }}",
+      "deleted": "A Fixed Compensation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fixed Compensation {{ id }}?"
+      },
+      "detail": {
+        "title": "Fixed Compensation"
+      },
+      "localIdNumber": "Local Id Number",
+      "fixedCompensationTypeGroupCode": "Fixed Compensation Type Group Code",
+      "fixedCompensationTypeGroupLabel": "Fixed Compensation Type Group Label",
+      "effectiveBeginningDate": "Effective Beginning Date",
+      "fixedCompensationCurrency": "Fixed Compensation Currency",
+      "fixedCompensationLocalTypeCode": "Fixed Compensation Local Type Code",
+      "fixedCompensationLocalTypeLabel": "Fixed Compensation Local Type Label",
+      "fixedCompensationAmount": "Fixed Compensation Amount",
+      "compensationFrequency": "Compensation Frequency",
+      "effectiveEndDate": "Effective End Date",
+      "fixedCompensationEffectiveSequence": "Fixed Compensation Effective Sequence",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

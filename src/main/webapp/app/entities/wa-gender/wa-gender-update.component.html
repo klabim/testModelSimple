@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-wa-gender-heading" jhiTranslate="testModelSimpleApp.waGender.home.createOrEditLabel">Create or edit a Wa Gender</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waGender.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waGender.employeeLocalGender" for="field_employeeLocalGender">Employee Local Gender</label>
+                    <input type="text" class="form-control" name="employeeLocalGender" id="field_employeeLocalGender"
+                           formControlName="employeeLocalGender"/>
+                    <div *ngIf="editForm.get('employeeLocalGender')!.invalid && (editForm.get('employeeLocalGender')!.dirty || editForm.get('employeeLocalGender')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('employeeLocalGender')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waGender.employeeGender" for="field_employeeGender">Employee Gender</label>
+                    <input type="text" class="form-control" name="employeeGender" id="field_employeeGender"
+                           formControlName="employeeGender"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waGender.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

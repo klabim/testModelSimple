@@ -1,0 +1,99 @@
+{
+    "name": "WaAssignment",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sequence",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "localCompanyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "legalGroupCompanyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "establishment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "poleActivityGroupCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "groupSubPoleActivityCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "groupSubPoleActivityTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "budgetaryAffectationDepartmentCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "budgetaryAffectationDepartmentLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "budgetFunctionalIdSakkarah",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "administrativeDepartmentLocalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "administrativeDepartmentLocalLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adminFunctionalIdSakkarah",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detachmentGroupCompany",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detachmentLegalGroupCompany",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "assignment",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331100900",
+    "entityTableName": "wa_assignment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

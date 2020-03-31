@@ -1,0 +1,28 @@
+{
+  "testModelSimpleApp": {
+    "waSeniority": {
+      "home": {
+        "title": "Wa Seniorities",
+        "createLabel": "Create a new Wa Seniority",
+        "createOrEditLabel": "Create or edit a Wa Seniority",
+        "notFound": "No Wa Seniorities found"
+      },
+      "created": "A new Wa Seniority is created with identifier {{ param }}",
+      "updated": "A Wa Seniority is updated with identifier {{ param }}",
+      "deleted": "A Wa Seniority is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Seniority {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Seniority"
+      },
+      "localIdNumber": "Local Id Number",
+      "groupSgDateOfEntry": "Group Sg Date Of Entry",
+      "sgSeniorityDate": "Sg Seniority Date",
+      "hireDate": "Hire Date",
+      "bankingSectorSeniority": "Banking Sector Seniority",
+      "endingOfTrialPeriodEstimatedDate": "Ending Of Trial Period Estimated Date",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

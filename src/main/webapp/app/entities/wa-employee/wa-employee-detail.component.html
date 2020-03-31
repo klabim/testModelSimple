@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waEmployee">
+            <h2><span jhiTranslate="testModelSimpleApp.waEmployee.detail.title">Wa Employee</span> {{ waEmployee.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.ggi">Ggi</span></dt>
+                <dd>
+                    <span>{{ waEmployee.ggi }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.homeHostIndicator">Home Host Indicator</span></dt>
+                <dd>
+                    <span>{{ waEmployee.homeHostIndicator }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.legalGroupCompanyCode">Legal Group Company Code</span></dt>
+                <dd>
+                    <span>{{ waEmployee.legalGroupCompanyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.prefix">Prefix</span></dt>
+                <dd>
+                    <span>{{ waEmployee.prefix }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.latinBirthName">Latin Birth Name</span></dt>
+                <dd>
+                    <span>{{ waEmployee.latinBirthName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.localBirthName">Local Birth Name</span></dt>
+                <dd>
+                    <span>{{ waEmployee.localBirthName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.latinCommonName">Latin Common Name</span></dt>
+                <dd>
+                    <span>{{ waEmployee.latinCommonName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.localCommonName">Local Common Name</span></dt>
+                <dd>
+                    <span>{{ waEmployee.localCommonName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.latinNameComplement">Latin Name Complement</span></dt>
+                <dd>
+                    <span>{{ waEmployee.latinNameComplement }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.localNameComplement">Local Name Complement</span></dt>
+                <dd>
+                    <span>{{ waEmployee.localNameComplement }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.latinFirstName">Latin First Name</span></dt>
+                <dd>
+                    <span>{{ waEmployee.latinFirstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.localFirstName">Local First Name</span></dt>
+                <dd>
+                    <span>{{ waEmployee.localFirstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.employeeBirthDate">Employee Birth Date</span></dt>
+                <dd>
+                    <span>{{ waEmployee.employeeBirthDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.countryOfBirth">Country Of Birth</span></dt>
+                <dd>
+                    <span>{{ waEmployee.countryOfBirth }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.birthDepartment">Birth Department</span></dt>
+                <dd>
+                    <span>{{ waEmployee.birthDepartment }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waEmployee.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.sensitiveEmployeeFlag">Sensitive Employee Flag</span></dt>
+                <dd>
+                    <span>{{ waEmployee.sensitiveEmployeeFlag }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waEmployee.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waEmployee.waEmployee">
+                        <a [routerLink]="['/wa-employee', waEmployee.waEmployee?.id, 'view']">{{ waEmployee.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-employee', waEmployee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waGender">
+            <h2><span jhiTranslate="testModelSimpleApp.waGender.detail.title">Wa Gender</span> {{ waGender.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waGender.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waGender.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waGender.employeeLocalGender">Employee Local Gender</span></dt>
+                <dd>
+                    <span>{{ waGender.employeeLocalGender }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waGender.employeeGender">Employee Gender</span></dt>
+                <dd>
+                    <span>{{ waGender.employeeGender }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waGender.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waGender.waEmployee">
+                        <a [routerLink]="['/wa-employee', waGender.waEmployee?.id, 'view']">{{ waGender.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-gender', waGender.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

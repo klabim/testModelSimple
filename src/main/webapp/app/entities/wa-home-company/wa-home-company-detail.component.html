@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waHomeCompany">
+            <h2><span jhiTranslate="testModelSimpleApp.waHomeCompany.detail.title">Wa Home Company</span> {{ waHomeCompany.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waHomeCompany.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.effectiveAssignmentDate">Effective Assignment Date</span></dt>
+                <dd>
+                    <span>{{ waHomeCompany.effectiveAssignmentDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.sequence">Sequence</span></dt>
+                <dd>
+                    <span>{{ waHomeCompany.sequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.assignmentType">Assignment Type</span></dt>
+                <dd>
+                    <span>{{ waHomeCompany.assignmentType }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.assignmentTypeLabel">Assignment Type Label</span></dt>
+                <dd>
+                    <span>{{ waHomeCompany.assignmentTypeLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.homeCompanyCode">Home Company Code</span></dt>
+                <dd>
+                    <span>{{ waHomeCompany.homeCompanyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.groupHomeCompanyCode">Group Home Company Code</span></dt>
+                <dd>
+                    <span>{{ waHomeCompany.groupHomeCompanyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waHomeCompany.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waHomeCompany.waEmployee">
+                        <a [routerLink]="['/wa-employee', waHomeCompany.waEmployee?.id, 'view']">{{ waHomeCompany.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-home-company', waHomeCompany.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-wa-employee-heading" jhiTranslate="testModelSimpleApp.waEmployee.home.createOrEditLabel">Create or edit a Wa Employee</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.ggi" for="field_ggi">Ggi</label>
+                    <input type="text" class="form-control" name="ggi" id="field_ggi"
+                           formControlName="ggi"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.homeHostIndicator" for="field_homeHostIndicator">Home Host Indicator</label>
+                    <input type="text" class="form-control" name="homeHostIndicator" id="field_homeHostIndicator"
+                           formControlName="homeHostIndicator"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.legalGroupCompanyCode" for="field_legalGroupCompanyCode">Legal Group Company Code</label>
+                    <input type="text" class="form-control" name="legalGroupCompanyCode" id="field_legalGroupCompanyCode"
+                           formControlName="legalGroupCompanyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.prefix" for="field_prefix">Prefix</label>
+                    <input type="text" class="form-control" name="prefix" id="field_prefix"
+                           formControlName="prefix"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.latinBirthName" for="field_latinBirthName">Latin Birth Name</label>
+                    <input type="text" class="form-control" name="latinBirthName" id="field_latinBirthName"
+                           formControlName="latinBirthName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.localBirthName" for="field_localBirthName">Local Birth Name</label>
+                    <input type="text" class="form-control" name="localBirthName" id="field_localBirthName"
+                           formControlName="localBirthName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.latinCommonName" for="field_latinCommonName">Latin Common Name</label>
+                    <input type="text" class="form-control" name="latinCommonName" id="field_latinCommonName"
+                           formControlName="latinCommonName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.localCommonName" for="field_localCommonName">Local Common Name</label>
+                    <input type="text" class="form-control" name="localCommonName" id="field_localCommonName"
+                           formControlName="localCommonName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.latinNameComplement" for="field_latinNameComplement">Latin Name Complement</label>
+                    <input type="text" class="form-control" name="latinNameComplement" id="field_latinNameComplement"
+                           formControlName="latinNameComplement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.localNameComplement" for="field_localNameComplement">Local Name Complement</label>
+                    <input type="text" class="form-control" name="localNameComplement" id="field_localNameComplement"
+                           formControlName="localNameComplement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.latinFirstName" for="field_latinFirstName">Latin First Name</label>
+                    <input type="text" class="form-control" name="latinFirstName" id="field_latinFirstName"
+                           formControlName="latinFirstName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.localFirstName" for="field_localFirstName">Local First Name</label>
+                    <input type="text" class="form-control" name="localFirstName" id="field_localFirstName"
+                           formControlName="localFirstName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.employeeBirthDate" for="field_employeeBirthDate">Employee Birth Date</label>
+                    <div class="d-flex">
+                        <input id="field_employeeBirthDate" type="datetime-local" class="form-control" name="employeeBirthDate" formControlName="employeeBirthDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.countryOfBirth" for="field_countryOfBirth">Country Of Birth</label>
+                    <input type="text" class="form-control" name="countryOfBirth" id="field_countryOfBirth"
+                           formControlName="countryOfBirth"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.birthDepartment" for="field_birthDepartment">Birth Department</label>
+                    <input type="text" class="form-control" name="birthDepartment" id="field_birthDepartment"
+                           formControlName="birthDepartment"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                    <div *ngIf="editForm.get('localIdNumber')!.invalid && (editForm.get('localIdNumber')!.dirty || editForm.get('localIdNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('localIdNumber')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.sensitiveEmployeeFlag" for="field_sensitiveEmployeeFlag">Sensitive Employee Flag</label>
+                    <input type="text" class="form-control" name="sensitiveEmployeeFlag" id="field_sensitiveEmployeeFlag"
+                           formControlName="sensitiveEmployeeFlag"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.waEmployee.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

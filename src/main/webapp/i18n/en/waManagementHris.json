@@ -1,0 +1,26 @@
+{
+  "testModelSimpleApp": {
+    "waManagementHris": {
+      "home": {
+        "title": "Wa Management Hrises",
+        "createLabel": "Create a new Wa Management Hris",
+        "createOrEditLabel": "Create or edit a Wa Management Hris",
+        "notFound": "No Wa Management Hrises found"
+      },
+      "created": "A new Wa Management Hris is created with identifier {{ param }}",
+      "updated": "A Wa Management Hris is updated with identifier {{ param }}",
+      "deleted": "A Wa Management Hris is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Management Hris {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Management Hris"
+      },
+      "managementHrisCode": "Management Hris Code",
+      "localIdNumber": "Local Id Number",
+      "managementHrisLabel": "Management Hris Label",
+      "entityManagementCode": "Entity Management Code",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

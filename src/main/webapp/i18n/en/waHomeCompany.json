@@ -1,0 +1,29 @@
+{
+  "testModelSimpleApp": {
+    "waHomeCompany": {
+      "home": {
+        "title": "Wa Home Companies",
+        "createLabel": "Create a new Wa Home Company",
+        "createOrEditLabel": "Create or edit a Wa Home Company",
+        "notFound": "No Wa Home Companies found"
+      },
+      "created": "A new Wa Home Company is created with identifier {{ param }}",
+      "updated": "A Wa Home Company is updated with identifier {{ param }}",
+      "deleted": "A Wa Home Company is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Home Company {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Home Company"
+      },
+      "localIdNumber": "Local Id Number",
+      "effectiveAssignmentDate": "Effective Assignment Date",
+      "sequence": "Sequence",
+      "assignmentType": "Assignment Type",
+      "assignmentTypeLabel": "Assignment Type Label",
+      "homeCompanyCode": "Home Company Code",
+      "groupHomeCompanyCode": "Group Home Company Code",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

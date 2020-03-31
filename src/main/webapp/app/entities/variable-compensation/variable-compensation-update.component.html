@@ -1,0 +1,106 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-variable-compensation-heading" jhiTranslate="testModelSimpleApp.variableCompensation.home.createOrEditLabel">Create or edit a Variable Compensation</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.localIdNumber" for="field_localIdNumber">Local Id Number</label>
+                    <input type="text" class="form-control" name="localIdNumber" id="field_localIdNumber"
+                           formControlName="localIdNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationTypeGroupCode" for="field_variableCompensationTypeGroupCode">Variable Compensation Type Group Code</label>
+                    <input type="text" class="form-control" name="variableCompensationTypeGroupCode" id="field_variableCompensationTypeGroupCode"
+                           formControlName="variableCompensationTypeGroupCode"/>
+                    <div *ngIf="editForm.get('variableCompensationTypeGroupCode')!.invalid && (editForm.get('variableCompensationTypeGroupCode')!.dirty || editForm.get('variableCompensationTypeGroupCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('variableCompensationTypeGroupCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationTypeGroupLabel" for="field_variableCompensationTypeGroupLabel">Variable Compensation Type Group Label</label>
+                    <input type="text" class="form-control" name="variableCompensationTypeGroupLabel" id="field_variableCompensationTypeGroupLabel"
+                           formControlName="variableCompensationTypeGroupLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.effectiveBeginningDate" for="field_effectiveBeginningDate">Effective Beginning Date</label>
+                    <div class="d-flex">
+                        <input id="field_effectiveBeginningDate" type="datetime-local" class="form-control" name="effectiveBeginningDate" formControlName="effectiveBeginningDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('effectiveBeginningDate')!.invalid && (editForm.get('effectiveBeginningDate')!.dirty || editForm.get('effectiveBeginningDate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('effectiveBeginningDate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('effectiveBeginningDate')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationCurrency" for="field_variableCompensationCurrency">Variable Compensation Currency</label>
+                    <input type="text" class="form-control" name="variableCompensationCurrency" id="field_variableCompensationCurrency"
+                           formControlName="variableCompensationCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationLocalTypeCode" for="field_variableCompensationLocalTypeCode">Variable Compensation Local Type Code</label>
+                    <input type="text" class="form-control" name="variableCompensationLocalTypeCode" id="field_variableCompensationLocalTypeCode"
+                           formControlName="variableCompensationLocalTypeCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationLocalTypeLabel" for="field_variableCompensationLocalTypeLabel">Variable Compensation Local Type Label</label>
+                    <input type="text" class="form-control" name="variableCompensationLocalTypeLabel" id="field_variableCompensationLocalTypeLabel"
+                           formControlName="variableCompensationLocalTypeLabel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationAmount" for="field_variableCompensationAmount">Variable Compensation Amount</label>
+                    <input type="text" class="form-control" name="variableCompensationAmount" id="field_variableCompensationAmount"
+                           formControlName="variableCompensationAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.effectiveEndDate" for="field_effectiveEndDate">Effective End Date</label>
+                    <div class="d-flex">
+                        <input id="field_effectiveEndDate" type="datetime-local" class="form-control" name="effectiveEndDate" formControlName="effectiveEndDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testModelSimpleApp.variableCompensation.waEmployee" for="field_waEmployee">Wa Employee</label>
+                    <select class="form-control" id="field_waEmployee" name="waEmployee" formControlName="waEmployee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="waEmployeeOption.id === editForm.get('waEmployee')!.value?.id ? editForm.get('waEmployee')!.value : waEmployeeOption" *ngFor="let waEmployeeOption of waemployees; trackBy: trackById">{{ waEmployeeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

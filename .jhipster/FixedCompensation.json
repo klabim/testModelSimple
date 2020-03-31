@@ -1,0 +1,75 @@
+{
+    "name": "FixedCompensation",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fixedCompensationTypeGroupCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fixedCompensationTypeGroupLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveBeginningDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fixedCompensationCurrency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fixedCompensationLocalTypeCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fixedCompensationLocalTypeLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fixedCompensationAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "compensationFrequency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveEndDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "fixedCompensationEffectiveSequence",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "fixedCompensation",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331101800",
+    "entityTableName": "fixed_compensation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

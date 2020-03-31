@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waPersonalAddress">
+            <h2><span jhiTranslate="testModelSimpleApp.waPersonalAddress.detail.title">Wa Personal Address</span> {{ waPersonalAddress.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.personalAddressType">Personal Address Type</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.personalAddressType }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.additionalAddress1">Additional Address 1</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.additionalAddress1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.additionalAddress2">Additional Address 2</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.additionalAddress2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.physicalAddress">Physical Address</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.physicalAddress }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.additionalPostalDelivery">Additional Postal Delivery</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.additionalPostalDelivery }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.zipCodePostalCode">Zip Code Postal Code</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.zipCodePostalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.employeeCityOfResidence">Employee City Of Residence</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.employeeCityOfResidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.countryOfResidence">Country Of Residence</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.countryOfResidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.effectiveDate">Effective Date</span></dt>
+                <dd>
+                    <span>{{ waPersonalAddress.effectiveDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waPersonalAddress.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waPersonalAddress.waEmployee">
+                        <a [routerLink]="['/wa-employee', waPersonalAddress.waEmployee?.id, 'view']">{{ waPersonalAddress.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-personal-address', waPersonalAddress.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

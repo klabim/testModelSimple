@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waLanguage">
+            <h2><span jhiTranslate="testModelSimpleApp.waLanguage.detail.title">Wa Language</span> {{ waLanguage.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waLanguage.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageCode">Language Code</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageLabel">Language Label</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageSpeakProficiencyCode">Language Speak Proficiency Code</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageSpeakProficiencyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageSpeakProficiencyLabel">Language Speak Proficiency Label</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageSpeakProficiencyLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageReadProficiencyCode">Language Read Proficiency Code</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageReadProficiencyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageReadProficiencyLabel">Language Read Proficiency Label</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageReadProficiencyLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageWriteProficiencyCode">Language Write Proficiency Code</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageWriteProficiencyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageWriteProficiencyLabel">Language Write Proficiency Label</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageWriteProficiencyLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.nativeLanguage">Native Language</span></dt>
+                <dd>
+                    <span>{{ waLanguage.nativeLanguage }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelLocalCode">Language Level Local Code</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageLevelLocalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelLocalLabel">Language Level Local Label</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageLevelLocalLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelGroupCode">Language Level Group Code</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageLevelGroupCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.languageLevelGroupLabel">Language Level Group Label</span></dt>
+                <dd>
+                    <span>{{ waLanguage.languageLevelGroupLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waLanguage.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waLanguage.waEmployee">
+                        <a [routerLink]="['/wa-employee', waLanguage.waEmployee?.id, 'view']">{{ waLanguage.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-language', waLanguage.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

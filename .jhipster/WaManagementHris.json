@@ -1,0 +1,44 @@
+{
+    "name": "WaManagementHris",
+    "fields": [
+        {
+            "fieldName": "managementHrisCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "managementHrisLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "entityManagementCode",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "managementHris",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331101400",
+    "entityTableName": "wa_management_hris",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

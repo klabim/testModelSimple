@@ -1,0 +1,65 @@
+{
+    "name": "WaHomeCompany",
+    "fields": [
+        {
+            "fieldName": "localIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "effectiveAssignmentDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sequence",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "assignmentType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "assignmentTypeLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "homeCompanyCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "groupHomeCompanyCode",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "waEmployee",
+            "otherEntityRelationshipName": "homeCompany",
+            "relationshipName": "waEmployee",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200331101100",
+    "entityTableName": "wa_home_company",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waJob">
+            <h2><span jhiTranslate="testModelSimpleApp.waJob.detail.title">Wa Job</span> {{ waJob.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waJob.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.effectiveDate">Effective Date</span></dt>
+                <dd>
+                    <span>{{ waJob.effectiveDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.sequence">Sequence</span></dt>
+                <dd>
+                    <span>{{ waJob.sequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.localPositionCode">Local Position Code</span></dt>
+                <dd>
+                    <span>{{ waJob.localPositionCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.localPositionLevel">Local Position Level</span></dt>
+                <dd>
+                    <span>{{ waJob.localPositionLevel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.positionEntryDate">Position Entry Date</span></dt>
+                <dd>
+                    <span>{{ waJob.positionEntryDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.jobCodeLocalValue">Job Code Local Value</span></dt>
+                <dd>
+                    <span>{{ waJob.jobCodeLocalValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.jobCodeGroupeValue">Job Code Groupe Value</span></dt>
+                <dd>
+                    <span>{{ waJob.jobCodeGroupeValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.jobEntryDate">Job Entry Date</span></dt>
+                <dd>
+                    <span>{{ waJob.jobEntryDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.localCollectiveAgreementCode">Local Collective Agreement Code</span></dt>
+                <dd>
+                    <span>{{ waJob.localCollectiveAgreementCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.localCollectiveAgreementLabel">Local Collective Agreement Label</span></dt>
+                <dd>
+                    <span>{{ waJob.localCollectiveAgreementLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.orgRelationship">Org Relationship</span></dt>
+                <dd>
+                    <span>{{ waJob.orgRelationship }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.prescripteur">Prescripteur</span></dt>
+                <dd>
+                    <span>{{ waJob.prescripteur }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waJob.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waJob.waEmployee">
+                        <a [routerLink]="['/wa-employee', waJob.waEmployee?.id, 'view']">{{ waJob.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-job', waJob.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

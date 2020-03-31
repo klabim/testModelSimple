@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waClassification">
+            <h2><span jhiTranslate="testModelSimpleApp.waClassification.detail.title">Wa Classification</span> {{ waClassification.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waClassification.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.effectiveDate">Effective Date</span></dt>
+                <dd>
+                    <span>{{ waClassification.effectiveDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.sequence">Sequence</span></dt>
+                <dd>
+                    <span>{{ waClassification.sequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.localClassificationCode">Local Classification Code</span></dt>
+                <dd>
+                    <span>{{ waClassification.localClassificationCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.localClassificationLabel">Local Classification Label</span></dt>
+                <dd>
+                    <span>{{ waClassification.localClassificationLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.groupClassificationCode">Group Classification Code</span></dt>
+                <dd>
+                    <span>{{ waClassification.groupClassificationCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.groupClassificationLabel">Group Classification Label</span></dt>
+                <dd>
+                    <span>{{ waClassification.groupClassificationLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.professionalCategoryCode">Professional Category Code</span></dt>
+                <dd>
+                    <span>{{ waClassification.professionalCategoryCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.professionalCategoryLabel">Professional Category Label</span></dt>
+                <dd>
+                    <span>{{ waClassification.professionalCategoryLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waClassification.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waClassification.waEmployee">
+                        <a [routerLink]="['/wa-employee', waClassification.waEmployee?.id, 'view']">{{ waClassification.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-classification', waClassification.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

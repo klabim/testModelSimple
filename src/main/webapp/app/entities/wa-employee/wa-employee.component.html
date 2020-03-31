@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testModelSimpleApp.waEmployee.home.title">Wa Employees</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-wa-employee" [routerLink]="['/wa-employee/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="testModelSimpleApp.waEmployee.home.createLabel">
+            Create a new Wa Employee
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="waEmployees?.length === 0">
+        <span jhiTranslate="testModelSimpleApp.waEmployee.home.notFound">No waEmployees found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="waEmployees?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.ggi">Ggi</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.homeHostIndicator">Home Host Indicator</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.legalGroupCompanyCode">Legal Group Company Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.prefix">Prefix</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.latinBirthName">Latin Birth Name</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.localBirthName">Local Birth Name</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.latinCommonName">Latin Common Name</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.localCommonName">Local Common Name</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.latinNameComplement">Latin Name Complement</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.localNameComplement">Local Name Complement</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.latinFirstName">Latin First Name</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.localFirstName">Local First Name</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.employeeBirthDate">Employee Birth Date</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.countryOfBirth">Country Of Birth</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.birthDepartment">Birth Department</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.localIdNumber">Local Id Number</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.sensitiveEmployeeFlag">Sensitive Employee Flag</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waEmployee.waEmployee">Wa Employee</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let waEmployee of waEmployees ;trackBy: trackId">
+                    <td><a [routerLink]="['/wa-employee', waEmployee.id, 'view']">{{ waEmployee.id }}</a></td>
+                    <td>{{ waEmployee.ggi }}</td>
+                    <td>{{ waEmployee.homeHostIndicator }}</td>
+                    <td>{{ waEmployee.legalGroupCompanyCode }}</td>
+                    <td>{{ waEmployee.prefix }}</td>
+                    <td>{{ waEmployee.latinBirthName }}</td>
+                    <td>{{ waEmployee.localBirthName }}</td>
+                    <td>{{ waEmployee.latinCommonName }}</td>
+                    <td>{{ waEmployee.localCommonName }}</td>
+                    <td>{{ waEmployee.latinNameComplement }}</td>
+                    <td>{{ waEmployee.localNameComplement }}</td>
+                    <td>{{ waEmployee.latinFirstName }}</td>
+                    <td>{{ waEmployee.localFirstName }}</td>
+                    <td>{{ waEmployee.employeeBirthDate | date:'medium' }}</td>
+                    <td>{{ waEmployee.countryOfBirth }}</td>
+                    <td>{{ waEmployee.birthDepartment }}</td>
+                    <td>{{ waEmployee.localIdNumber }}</td>
+                    <td>{{ waEmployee.sensitiveEmployeeFlag }}</td>
+                    <td>
+                        <div *ngIf="waEmployee.waEmployee">
+                            <a [routerLink]="['/wa-employee', waEmployee.waEmployee?.id, 'view']" >{{ waEmployee.waEmployee?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/wa-employee', waEmployee.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/wa-employee', waEmployee.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(waEmployee)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

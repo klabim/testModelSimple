@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="waManagementHris">
+            <h2><span jhiTranslate="testModelSimpleApp.waManagementHris.detail.title">Wa Management Hris</span> {{ waManagementHris.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.waManagementHris.managementHrisCode">Management Hris Code</span></dt>
+                <dd>
+                    <span>{{ waManagementHris.managementHrisCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waManagementHris.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ waManagementHris.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waManagementHris.managementHrisLabel">Management Hris Label</span></dt>
+                <dd>
+                    <span>{{ waManagementHris.managementHrisLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waManagementHris.entityManagementCode">Entity Management Code</span></dt>
+                <dd>
+                    <span>{{ waManagementHris.entityManagementCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.waManagementHris.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="waManagementHris.waEmployee">
+                        <a [routerLink]="['/wa-employee', waManagementHris.waEmployee?.id, 'view']">{{ waManagementHris.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/wa-management-hris', waManagementHris.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

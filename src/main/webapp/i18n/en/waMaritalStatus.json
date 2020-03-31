@@ -1,0 +1,26 @@
+{
+  "testModelSimpleApp": {
+    "waMaritalStatus": {
+      "home": {
+        "title": "Wa Marital Statuses",
+        "createLabel": "Create a new Wa Marital Status",
+        "createOrEditLabel": "Create or edit a Wa Marital Status",
+        "notFound": "No Wa Marital Statuses found"
+      },
+      "created": "A new Wa Marital Status is created with identifier {{ param }}",
+      "updated": "A Wa Marital Status is updated with identifier {{ param }}",
+      "deleted": "A Wa Marital Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Wa Marital Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Wa Marital Status"
+      },
+      "localIdNumber": "Local Id Number",
+      "maritalStatusCode": "Marital Status Code",
+      "maritalStatusLabel": "Marital Status Label",
+      "effectiveDate": "Effective Date",
+      "waEmployee": "Wa Employee"
+    }
+  }
+}

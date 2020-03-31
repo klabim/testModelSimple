@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="variableCompensation">
+            <h2><span jhiTranslate="testModelSimpleApp.variableCompensation.detail.title">Variable Compensation</span> {{ variableCompensation.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.localIdNumber">Local Id Number</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.localIdNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationTypeGroupCode">Variable Compensation Type Group Code</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.variableCompensationTypeGroupCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationTypeGroupLabel">Variable Compensation Type Group Label</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.variableCompensationTypeGroupLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.effectiveBeginningDate">Effective Beginning Date</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.effectiveBeginningDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationCurrency">Variable Compensation Currency</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.variableCompensationCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationLocalTypeCode">Variable Compensation Local Type Code</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.variableCompensationLocalTypeCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationLocalTypeLabel">Variable Compensation Local Type Label</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.variableCompensationLocalTypeLabel }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.variableCompensationAmount">Variable Compensation Amount</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.variableCompensationAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.effectiveEndDate">Effective End Date</span></dt>
+                <dd>
+                    <span>{{ variableCompensation.effectiveEndDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="testModelSimpleApp.variableCompensation.waEmployee">Wa Employee</span></dt>
+                <dd>
+                    <div *ngIf="variableCompensation.waEmployee">
+                        <a [routerLink]="['/wa-employee', variableCompensation.waEmployee?.id, 'view']">{{ variableCompensation.waEmployee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/variable-compensation', variableCompensation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

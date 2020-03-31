@@ -14,6 +14,38 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100400_added_entity_WaEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100500_added_entity_WaGender.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100600_added_entity_WaNationality.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100700_added_entity_WaMaritalStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100800_added_entity_WaPersonalAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100900_added_entity_WaAssignment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101000_added_entity_WaHostCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101100_added_entity_WaHomeCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101200_added_entity_WaJob.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101300_added_entity_WaClassification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101400_added_entity_WaManagementHris.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101500_added_entity_ManagerialLink.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101600_added_entity_WaSeniority.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101700_added_entity_WaLanguage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101800_added_entity_FixedCompensation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101900_added_entity_VariableCompensation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200331100400_added_entity_constraints_WaEmployee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100500_added_entity_constraints_WaGender.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100600_added_entity_constraints_WaNationality.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100700_added_entity_constraints_WaMaritalStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100800_added_entity_constraints_WaPersonalAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331100900_added_entity_constraints_WaAssignment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101000_added_entity_constraints_WaHostCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101100_added_entity_constraints_WaHomeCompany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101200_added_entity_constraints_WaJob.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101300_added_entity_constraints_WaClassification.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101400_added_entity_constraints_WaManagementHris.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101500_added_entity_constraints_ManagerialLink.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101600_added_entity_constraints_WaSeniority.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101700_added_entity_constraints_WaLanguage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101800_added_entity_constraints_FixedCompensation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331101900_added_entity_constraints_VariableCompensation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="testModelSimpleApp.waAssignment.home.title">Wa Assignments</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-wa-assignment" [routerLink]="['/wa-assignment/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="testModelSimpleApp.waAssignment.home.createLabel">
+            Create a new Wa Assignment
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="waAssignments?.length === 0">
+        <span jhiTranslate="testModelSimpleApp.waAssignment.home.notFound">No waAssignments found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="waAssignments?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.localIdNumber">Local Id Number</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.effectiveDate">Effective Date</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.sequence">Sequence</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.localCompanyCode">Local Company Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.legalGroupCompanyCode">Legal Group Company Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.establishment">Establishment</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.poleActivityGroupCode">Pole Activity Group Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.groupSubPoleActivityCode">Group Sub Pole Activity Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.groupSubPoleActivityTitle">Group Sub Pole Activity Title</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.budgetaryAffectationDepartmentCode">Budgetary Affectation Department Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.budgetaryAffectationDepartmentLabel">Budgetary Affectation Department Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.budgetFunctionalIdSakkarah">Budget Functional Id Sakkarah</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.administrativeDepartmentLocalCode">Administrative Department Local Code</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.administrativeDepartmentLocalLabel">Administrative Department Local Label</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.adminFunctionalIdSakkarah">Admin Functional Id Sakkarah</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.detachmentGroupCompany">Detachment Group Company</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.detachmentLegalGroupCompany">Detachment Legal Group Company</span></th>
+                    <th scope="col" ><span jhiTranslate="testModelSimpleApp.waAssignment.waEmployee">Wa Employee</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let waAssignment of waAssignments ;trackBy: trackId">
+                    <td><a [routerLink]="['/wa-assignment', waAssignment.id, 'view']">{{ waAssignment.id }}</a></td>
+                    <td>{{ waAssignment.localIdNumber }}</td>
+                    <td>{{ waAssignment.effectiveDate | date:'medium' }}</td>
+                    <td>{{ waAssignment.sequence }}</td>
+                    <td>{{ waAssignment.localCompanyCode }}</td>
+                    <td>{{ waAssignment.legalGroupCompanyCode }}</td>
+                    <td>{{ waAssignment.establishment }}</td>
+                    <td>{{ waAssignment.poleActivityGroupCode }}</td>
+                    <td>{{ waAssignment.groupSubPoleActivityCode }}</td>
+                    <td>{{ waAssignment.groupSubPoleActivityTitle }}</td>
+                    <td>{{ waAssignment.budgetaryAffectationDepartmentCode }}</td>
+                    <td>{{ waAssignment.budgetaryAffectationDepartmentLabel }}</td>
+                    <td>{{ waAssignment.budgetFunctionalIdSakkarah }}</td>
+                    <td>{{ waAssignment.administrativeDepartmentLocalCode }}</td>
+                    <td>{{ waAssignment.administrativeDepartmentLocalLabel }}</td>
+                    <td>{{ waAssignment.adminFunctionalIdSakkarah }}</td>
+                    <td>{{ waAssignment.detachmentGroupCompany }}</td>
+                    <td>{{ waAssignment.detachmentLegalGroupCompany }}</td>
+                    <td>
+                        <div *ngIf="waAssignment.waEmployee">
+                            <a [routerLink]="['/wa-employee', waAssignment.waEmployee?.id, 'view']" >{{ waAssignment.waEmployee?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/wa-assignment', waAssignment.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/wa-assignment', waAssignment.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(waAssignment)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
